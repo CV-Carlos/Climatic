@@ -42,6 +42,10 @@ export class WelcomeAndSearchComponent {
 
   constructor(private weatherService: WeatherService, private router: Router) {}
 
+  /**
+  * Submits the city name to get weather data.
+  * @param model - The form model containing the city name.
+  */
   submit(model: any) {
     if (this.cityForm.valid) {
       this.weatherService.getWeather(model.city).subscribe(

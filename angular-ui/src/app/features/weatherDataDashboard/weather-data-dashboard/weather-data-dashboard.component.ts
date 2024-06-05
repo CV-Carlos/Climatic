@@ -58,6 +58,9 @@ export class WeatherDataDashboardComponent implements OnInit {
     this.selectedDayIndex = dayIndex;
   }
 
+  /**
+  * Navigates back to the welcome page for a new search.
+  */
   newSearch(): void {
     this.router.navigate(['/welcome']);
   }

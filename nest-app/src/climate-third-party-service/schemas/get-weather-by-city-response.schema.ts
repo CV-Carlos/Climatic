@@ -7,13 +7,13 @@ export type GetWeatherByCityResponseDocument = GetWeatherByCityResponse & Docume
 export class GetWeatherByCityResponse {
 
     @Prop()
-    temperature: string;
+    temperature: number;
 
     @Prop()
-    feelsLike: string;
+    feelsLike: number;
 
     @Prop()
-    humidity: string;
+    humidity: number;
 
     @Prop()
     iconUrl: string;

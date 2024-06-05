@@ -26,6 +26,12 @@ export class ClimateThirdPartyServiceService
         });
     }
 
+    /**
+   * Fetches and returns weather data for a city. Notice that due to complications with the api (weekly requests are paid)
+   * the weekly data is manually created for testing purposes.
+   * @param getWeatherByCityDto - DTO containing the city name.
+   * @returns A list of weather data for the week.
+   */
     async getWeatherByCityName(getWeatherByCityName: GetWeatherByCityDto): Promise<GetWeatherByCityResponseListDto> 
     {
         try 
