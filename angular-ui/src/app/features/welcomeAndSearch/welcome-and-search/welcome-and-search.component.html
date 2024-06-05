@@ -1,0 +1,13 @@
+<!-- welcome-and-search.component.html -->
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="text-center">
+      <h1 class="display-4 mb-4">Welcome</h1>
+      <form [formGroup]="cityForm" (ngSubmit)="submit(model)">
+        <formly-form [form]="cityForm" [model]="model" [fields]="fields" [options]="options"></formly-form>
+        <button type="submit" class="btn btn-primary mt-3">Get Weather</button>
+      </form>
+    </div>
+    <div *ngIf="error" class="mt-4 text-center text-danger">
+      <p>{{ error }}</p>
+    </div>
+  </div>

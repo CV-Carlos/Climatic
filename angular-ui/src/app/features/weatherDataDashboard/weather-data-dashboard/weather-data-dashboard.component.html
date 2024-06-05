@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <label for="daySelect" class="form-label">Select Day:</label>
+      <select id="daySelect" class="form-select" [(ngModel)]="selectedDayIndex">
+        <option *ngFor="let day of days; let i = index" [value]="i">{{ day }}</option>
+      </select>
+    </div>
+    <button class="btn btn-secondary ms-3" (click)="newSearch()">New Search</button>
+  </div>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" [ngClass]="{active: activeTab === 'temperature'}" (click)="activeTab = 'temperature'">Temperature</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" [ngClass]="{active: activeTab === 'feelsLike'}" (click)="activeTab = 'feelsLike'">Feels Like</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" [ngClass]="{active: activeTab === 'humidity'}" (click)="activeTab = 'humidity'">Humidity</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" [ngClass]="{active: activeTab === 'description'}" (click)="activeTab = 'description'">Description</button>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-3">
+    <div *ngIf="activeTab === 'temperature'" class="tab-pane fade" [ngClass]="{ 'show active': activeTab === 'temperature' }">
+      <div *ngIf="activeTab === 'temperature'" class="tab-content-container text-center">
+        <img src="assets/temperature.png" alt="Temperature" class="img-fluid mb-3 tab-image">
+        <h1>{{ weather?.[selectedDayIndex]?.temperature }}{{ getTemperatureUnit(weather?.[selectedDayIndex]?.unit) }}</h1>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'feelsLike'" class="tab-pane fade" [ngClass]="{ 'show active': activeTab === 'feelsLike' }">
+      <div *ngIf="activeTab === 'feelsLike'" class="tab-content-container text-center">
+        <img src="assets/feels-like.png" alt="Feels Like" class="img-fluid mb-3 tab-image">
+        <h1>{{ weather?.[selectedDayIndex]?.feelsLike }}{{ getTemperatureUnit(weather?.[selectedDayIndex]?.unit) }}</h1>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'humidity'" class="tab-pane fade" [ngClass]="{ 'show active': activeTab === 'humidity' }">
+      <div *ngIf="activeTab === 'humidity'" class="tab-content-container text-center">
+        <img src="assets/humidity.png" alt="Humidity" class="img-fluid mb-3 tab-image">
+        <h1>{{ weather?.[selectedDayIndex]?.humidity }}%</h1>
+      </div>
+    </div>
+    <div *ngIf="activeTab === 'description'" class="tab-pane fade" [ngClass]="{ 'show active': activeTab === 'description' }">
+      <div *ngIf="activeTab === 'description'" class="tab-content-container text-center">
+        <img [src]="weather?.[selectedDayIndex]?.iconUrl" alt="Weather Icon" class="img-fluid mb-3 tab-image">
+        <h1>{{ weather?.[selectedDayIndex]?.description }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="text-danger mt-3">{{ error }}</div>
+</div>

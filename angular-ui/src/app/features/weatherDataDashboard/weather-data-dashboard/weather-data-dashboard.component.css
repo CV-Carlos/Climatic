@@ -1,0 +1,23 @@
+.tab-content-container {
+    height: 300px; /* Ensure all tab contents have the same height */
+  }
+  
+  .tab-image {
+    max-height: 100px; /* Adjust the image height as needed */
+  }
+  
+  .tab-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px; /* Ensure consistency across all tabs */
+  }
+  
+  .tab-pane img {
+    margin-bottom: 1rem;
+  }
+  
+  .tab-pane h1 {
+    text-align: center;
+  }
