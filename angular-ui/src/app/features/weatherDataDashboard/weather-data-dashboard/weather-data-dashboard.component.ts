@@ -25,7 +25,6 @@ export class WeatherDataDashboardComponent implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
       this.weather = navigation.extras.state['weather'].weeklyWeather;
-      console.log(this.weather);
     }
   }
 
