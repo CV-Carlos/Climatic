@@ -30,7 +30,7 @@ Clone the repository:
 
   ```bash
    git clone <repository-url>
-   cd <repository-directory>/backend
+   cd <repository-directory>/nest-app
   ```
 
 Install dependencies:
@@ -63,7 +63,7 @@ Navigate to the frontend folder:
 
   ```bash
 
-    cd <repository-folder>/frontend
+    cd <repository-folder>/angular-ui
   ```
 Install dependencies:
 
